@@ -38,10 +38,6 @@ public class Projekt {
         return ID;
     }
 
-    public void setID(Integer ID) {
-        this.ID = ID;
-    }
-
     public String getBezeichnung() {
         return Bezeichnung;
     }

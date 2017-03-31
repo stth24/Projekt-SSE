@@ -7,58 +7,44 @@ import java.util.ArrayList;
  */
 public class Kunde {
     Integer ID;
-    String Vorname;
-    String Nachname;
-    ArrayList<Projekt> projekts = new ArrayList<>();
+    String Name;
+    ArrayList<Projekt> projekte = new ArrayList<>();
 
-    public Kunde(Integer id, String vorname, String nachname) {
+    public Kunde(Integer id, String name) {
         ID = id;
-        Vorname = vorname;
-        Nachname = nachname;
+        Name = name;
     }
 
     public void addProjekt(Projekt p){
-        projekts.add(p);
+        projekte.add(p);
     }
 
     public void removeProjekt(Projekt p){
-        projekts.remove(p);
+        projekte.remove(p);
     }
 
     public ArrayList<Projekt> getProjekts() {
-        return projekts;
+        return projekte;
     }
 
     public void setProjekts(ArrayList<Projekt> projekts) {
-        this.projekts = projekts;
+        this.projekte = projekts;
     }
 
     public Integer getID() {
         return ID;
     }
 
-    public void setID(Integer ID) {
-        this.ID = ID;
+    public String getName() {
+        return Name;
     }
 
-    public String getVorname() {
-        return Vorname;
-    }
-
-    public void setVorname(String vorname) {
-        Vorname = vorname;
-    }
-
-    public String getNachname() {
-        return Nachname;
-    }
-
-    public void setNachname(String nachname) {
-        Nachname = nachname;
+    public void setName(String name) {
+        Name = name;
     }
 
     @Override
     public String toString() {
-        return getID() + " " + getVorname() + " " + getNachname();
+        return getID() + " " + getName();
     }
 }

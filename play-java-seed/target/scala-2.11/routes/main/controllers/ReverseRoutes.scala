@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/Stefan Theissl/servSE/play-java-seed/conf/routes
-// @DATE:Tue Mar 28 17:04:27 CEST 2017
+// @SOURCE:C:/Users/Stefan Theissl/servSE/projekt/Projekt-SSE/play-java-seed/conf/routes
+// @DATE:Fri Mar 31 15:18:44 CEST 2017
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -12,39 +12,6 @@ import _root_.play.libs.F
 
 // @LINE:6
 package controllers {
-
-  // @LINE:24
-  class ReverseStudentController(_prefix: => String) {
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:24
-    def getInfo(): Call = {
-      import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "student")
-    }
-  
-    // @LINE:26
-    def create(): Call = {
-      import ReverseRouteContext.empty
-      Call("POST", _prefix + { _defaultPrefix } + "student")
-    }
-  
-    // @LINE:28
-    def update(id:Long): Call = {
-      import ReverseRouteContext.empty
-      Call("PUT", _prefix + { _defaultPrefix } + "student/" + implicitly[PathBindable[Long]].unbind("id", id))
-    }
-  
-    // @LINE:30
-    def delete(id:Long): Call = {
-      import ReverseRouteContext.empty
-      Call("DELETE", _prefix + { _defaultPrefix } + "student/" + implicitly[PathBindable[Long]].unbind("id", id))
-    }
-  
-  }
 
   // @LINE:6
   class ReverseHomeController(_prefix: => String) {
@@ -61,62 +28,50 @@ package controllers {
   
   }
 
-  // @LINE:9
-  class ReverseArticleController(_prefix: => String) {
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:10
-    def show(id:Int): Call = {
-      import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "article/" + implicitly[PathBindable[Int]].unbind("id", id))
-    }
-  
-    // @LINE:15
-    def update(id:Int): Call = {
-      import ReverseRouteContext.empty
-      Call("PUT", _prefix + { _defaultPrefix } + "article/" + implicitly[PathBindable[Int]].unbind("id", id))
-    }
-  
-    // @LINE:20
-    def getFile(filename:String): Call = {
-      import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "article/" + implicitly[PathBindable[String]].unbind("filename", filename))
-    }
-  
-    // @LINE:13
-    def create(): Call = {
-      import ReverseRouteContext.empty
-      Call("POST", _prefix + { _defaultPrefix } + "article")
-    }
-  
-    // @LINE:17
-    def delete(id:Int): Call = {
-      import ReverseRouteContext.empty
-      Call("DELETE", _prefix + { _defaultPrefix } + "article/" + implicitly[PathBindable[Int]].unbind("id", id))
-    }
-  
-    // @LINE:9
-    def list(): Call = {
-      import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "article")
-    }
-  
-  }
-
-  // @LINE:34
+  // @LINE:21
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:34
+    // @LINE:21
     def versioned(file:Asset): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[Asset]].unbind("file", file))
+    }
+  
+  }
+
+  // @LINE:11
+  class ReverseMitarbeiterController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:11
+    def getInfo(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "mitarbeiter")
+    }
+  
+    // @LINE:17
+    def delete(id:Integer): Call = {
+      import ReverseRouteContext.empty
+      Call("DELETE", _prefix + { _defaultPrefix } + "mitarbeiter/" + implicitly[PathBindable[Integer]].unbind("id", id))
+    }
+  
+    // @LINE:13
+    def create(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "mitarbeiter")
+    }
+  
+    // @LINE:15
+    def update(id:Integer): Call = {
+      import ReverseRouteContext.empty
+      Call("PUT", _prefix + { _defaultPrefix } + "mitarbeiter/" + implicitly[PathBindable[Integer]].unbind("id", id))
     }
   
   }

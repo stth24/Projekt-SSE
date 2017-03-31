@@ -4,7 +4,6 @@ package model;
  * Created by Stefan Theissl on 30.03.2017.
  */
 public class User {
-    Integer ID;
     String email;
     String password;
 

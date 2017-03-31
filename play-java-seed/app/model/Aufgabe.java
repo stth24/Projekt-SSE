@@ -8,17 +8,23 @@ import java.util.ArrayList;
  * Created by Stefan Theissl on 30.03.2017.
  */
 public class Aufgabe {
+    Integer ID;
     String Beschreibung;
     String Bezeichnung;
     DateTime Startzeit;
     DateTime Endzeit;
     ArrayList<Mitarbeiter> mitarbeiter = new ArrayList<>();
 
-    public Aufgabe(String beschreibung, String bezeichnung, DateTime startzeit, DateTime endzeit) {
+    public Aufgabe(Integer id, String beschreibung, String bezeichnung, DateTime startzeit, DateTime endzeit) {
+        ID = id;
         Beschreibung = beschreibung;
         Bezeichnung = bezeichnung;
         Startzeit = startzeit;
         Endzeit = endzeit;
+    }
+
+    public Integer getID() {
+        return ID;
     }
 
     public void addMitarbeiter(Mitarbeiter m){
