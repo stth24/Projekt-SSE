@@ -1,0 +1,31 @@
+@(workerTaskForm: play.data.Form[WorkerTask], workerList: List[Worker], taskList: List[Task])
+
+@main("Neue Mitarbeiteraufgaben"){
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Neue Aufgaben für Mitarbeiter</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+        @helper.form(action = routes.WorkerTaskController.create()){
+            @helper.select(
+                field = workerTaskForm("tmpworker"),
+                options = (workerList.map(worker => worker.getId().toString() -> worker.getNachname())),
+                'id -> "worker",
+                '_label -> "Mitarbeiter",
+                'class -> "form-control")
+            @helper.select(
+                field = workerTaskForm("tmptask"),
+                options = (taskList.map(task => task.getId().toString() -> task.getName())),
+                'id -> "task",
+                '_label -> "Aufgabe",
+                'class -> "form-control")
+
+            <button type="submit" class="btn btn-success" value="Anlegen" ><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Einlagern </button>
+        }
+        </div>
+    </div>
+
+}

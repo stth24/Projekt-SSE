@@ -1,0 +1,54 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+
+
+#Forms
+GET     /addCustomer              controllers.FormController.addCustomer()
+GET     /addProject             controllers.FormController.addProject()
+GET     /addTask              controllers.FormController.addTask()
+GET     /addWorker             controllers.FormController.addWorker()
+
+GET     /addProjectTask      controllers.FormController.addProjectTask()
+GET     /addProjectHolder      controllers.FormController.addProjectHolder()
+GET     /addWorkerTask      controllers.FormController.addWorkerTask()
+
+
+#Customer
+GET     /product                    controllers.CustomerController.list()
+GET     /product/:id                controllers.CustomerController.show(id: Long)
+POST    /product                    controllers.CustomerController.create()
+GET     /deleteproduct/:id          controllers.CustomerController.delete(id: Long)
+
+
+#Task
+GET     /task                    controllers.TaskController.list()
+GET     /task/:id                controllers.TaskController.show(id: Long)
+POST    /task                   controllers.TaskController.create()
+GET     /deletetask/:id          controllers.TaskController.delete(id: Long)
+
+
+#Worker
+GET     /worker                    controllers.WorkerController.list()
+GET     /worker/:id                controllers.WorkerController.show(id: Long)
+POST    /worker                    controllers.WorkerController.create()
+GET     /deleteworker/:id          controllers.WorkerController.delete(id: Long)
+
+#Project
+GET     /project                    controllers.ProjectController.list()
+GET     /project/:id                controllers.ProjectController.show(id: Long)
+POST    /project                   controllers.ProjectController.create()
+GET     /deleteproject/:id          controllers.ProjectController.delete(id: Long)
+
+#ProjectHolder, ProjectTask, WorkerTask
+POST    /projectholder          controllers.ProjectHolderController.create()
+POST    /projecttask            controllers.ProjectTaskController.create()
+POST    /wokertask              controllers.WorkerTaskController.create()
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

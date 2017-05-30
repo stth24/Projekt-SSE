@@ -1,0 +1,55 @@
+@(project: Project)
+
+@main("Projekt Edit"){
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Projekt: @project.getName()</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <b>Infos</b>
+            <div>@project.getName() @project.getBeschreibung()</div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="row add-item">
+        <div class="col-xs-2">
+            <a href="@routes.FormController.addProjectTask()" class="btn btn-success"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i></a>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+
+                        <td>Name</td>
+                        <td>Beschreibung</td>
+                        <td>Dauer</td>
+                    </tr>
+                </thead>
+                <tbody>
+                @for(task <- project.getProjectTasks()){
+                    <tr>
+
+                        <td>@task.getTask.getName()</td>
+                        <td>@task.getTask.getBeschreibung()</td>
+                        <td>@task.getTask.getDauer()</td>
+
+                    </tr>
+
+                }
+
+
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+}

@@ -1,0 +1,7 @@
+Fehlende Features:
+- Anmelden am Programm mit Email und Passwort
+- Suchen nach Projekten
+- Die Dauer einer Aufgabe soll sichtbar sein
+- Auswertung über die Projektdauer und die Bearbeitungszeit
+- Auswertung über die Arbeitszeit eines Mitarbeiters an einer Aufgabe/einem Projekt
+- LÖSCHEN von Mitarbeitern

@@ -1,0 +1,52 @@
+@(workerList: List[Worker])
+
+@main("Worker"){
+    <h1>Mitarbeiter</h1>
+    @if(workerList.size() > 0) {
+
+        <div class="row">
+            <div class="col-xs-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Vorname</td>
+                            <td>Nachname</td>
+                            <td>Abteilung</td>
+                            <td>Arbeitszeit</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @for(worker <- workerList){
+                        <tr>
+                            <td>@worker.getId()</td>
+                            <td>@worker.getVorname()</td>
+                            <td>@worker.getNachname()</td>
+                            <td>@worker.getAbteilung()</td>
+                            <td>@worker.getArbeitszeit()</td>
+                            <td>
+
+                                <a href="@routes.WorkerController.delete(worker.getId())" class="btn btn-danger"><i class="glyphicon glyphicon-remove" aria-hidden="true"></i></a>
+
+                            </td>
+
+
+                        </tr>
+
+                    }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    } else{
+        <div class="warehouse-item">
+            Keine Mitarbeiter vorhanden
+        </div>
+    }
+
+    <div class="new-holder">
+        <a href="@routes.FormController.addWorker()" class="btn btn-success"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Neuen Mitarbeiter anlegen</a>
+    </div>
+
+}

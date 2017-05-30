@@ -1,0 +1,7 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Stefan Theissl\servSE\projekt\Projekt-SSE\projectmanagment-play\conf\application.conf,C:\Users\Stefan Theissl\servSE\projekt\Projekt-SSE\projectmanagment-play\target\scala-2.11\classes\application.conf)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Stefan Theissl\servSE\projekt\Projekt-SSE\projectmanagment-play\conf\evolutions,C:\Users\Stefan Theissl\servSE\projekt\Projekt-SSE\projectmanagment-play\target\scala-2.11\classes\evolutions)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Stefan Theissl\servSE\projekt\Projekt-SSE\projectmanagment-play\conf\logback.xml,C:\Users\Stefan Theissl\servSE\projekt\Projekt-SSE\projectmanagment-play\target\scala-2.11\classes\logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Stefan Theissl\servSE\projekt\Projekt-SSE\projectmanagment-play\conf\routes,C:\Users\Stefan Theissl\servSE\projekt\Projekt-SSE\projectmanagment-play\target\scala-2.11\classes\routes)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Stefan Theissl\servSE\projekt\Projekt-SSE\projectmanagment-play\conf\evolutions\default,C:\Users\Stefan Theissl\servSE\projekt\Projekt-SSE\projectmanagment-play\target\scala-2.11\classes\evolutions\default)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Stefan Theissl\servSE\projekt\Projekt-SSE\projectmanagment-play\conf\evolutions\default\1.sql,C:\Users\Stefan Theissl\servSE\projekt\Projekt-SSE\projectmanagment-play\target\scala-2.11\classes\evolutions\default\1.sql)[0m

@@ -1,0 +1,57 @@
+@(task: Task)
+
+    @main("Projekt Edit"){
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Aufgabe: @task.getName()</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <b>Infos</b>
+                <div>@task.getBeschreibung()</div>
+                <div></div>
+            </div>
+        </div>
+
+        <div class="row add-item">
+            <div class="col-xs-2">
+                <a href="@routes.FormController.addWorkerTask()" class="btn btn-success"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i></a>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+
+                            <td>ID</td>
+                            <td>Vorname</td>
+                            <td>Nachname</td>
+                            <td>Abteilung</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @for(worker <- task.getWorkerTasks()){
+                        <tr>
+                            <td>@worker.getWorker().getId()</td>
+                            <td>@worker.getWorker().getVorname()</td>
+                            <td>@worker.getWorker().getNachname()</td>
+                            <td>@worker.getWorker().getAbteilung()</td>
+
+
+                        </tr>
+
+                    }
+
+
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    }
