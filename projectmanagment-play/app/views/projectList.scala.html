@@ -1,5 +1,6 @@
 @(projectList: List[Project])
 
+
 @main("Projekte"){
     <h1>Projekte</h1>
     @if(projectList.size() > 0) {
@@ -13,8 +14,6 @@
                             <td>Name</td>
                             <td>Beschreibung</td>
                             <td>Projektdauer</td>
-                        </tr>
-                    </thead>
                     <tbody>
                     @for(project <- projectList){
                         <tr>
@@ -47,5 +46,19 @@
     <div class="new-holder">
         <a href="@routes.FormController.addProject()" class="btn btn-success"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Neues Projekt anlegen</a>
     </div>
+    <br>
+    <div class="row">
+        <div class="col-xs-12">
+            <input type="text" id="searchparam" placeholder="Suchbegriff"/>
+            <button id="searchbtn" class="btn btn-success">Suchen</button>
+        </div>
+    </div>
 
+    <script>
+            $('#searchbtn').click(function(){
+                var prm = $('#searchparam').val();
+//                alert(prm);
+                window.location = "/projectsearch/" + prm;
+            });
+    </script>
 }

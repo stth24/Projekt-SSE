@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Stefan Theissl/servSE/projekt/Projekt-SSE/projectmanagment-play/conf/routes
-// @DATE:Tue May 30 15:12:44 CEST 2017
+// @DATE:Tue Jun 06 00:44:34 CEST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:54
+  // @LINE:55
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:54
+    // @LINE:55
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -93,27 +93,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:41
-    def list: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.ProjectController.list",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "project"})
-        }
-      """
-    )
-  
-    // @LINE:43
-    def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.ProjectController.create",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "project"})
-        }
-      """
-    )
-  
-    // @LINE:44
+    // @LINE:45
     def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ProjectController.delete",
       """
@@ -129,6 +109,36 @@ package controllers.javascript {
       """
         function(id0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "project/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id0)})
+        }
+      """
+    )
+  
+    // @LINE:44
+    def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ProjectController.create",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "project"})
+        }
+      """
+    )
+  
+    // @LINE:43
+    def search: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ProjectController.search",
+      """
+        function(name0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "projectsearch/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("name", encodeURIComponent(name0))})
+        }
+      """
+    )
+  
+    // @LINE:41
+    def list: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ProjectController.list",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "project"})
         }
       """
     )
@@ -185,7 +195,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:47
+  // @LINE:48
   class ReverseProjectHolderController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -193,7 +203,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:47
+    // @LINE:48
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ProjectHolderController.create",
       """
@@ -205,7 +215,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:48
+  // @LINE:49
   class ReverseProjectTaskController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -213,7 +223,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:48
+    // @LINE:49
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ProjectTaskController.create",
       """
@@ -225,7 +235,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:49
+  // @LINE:50
   class ReverseWorkerTaskController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -233,7 +243,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:49
+    // @LINE:50
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.WorkerTaskController.create",
       """

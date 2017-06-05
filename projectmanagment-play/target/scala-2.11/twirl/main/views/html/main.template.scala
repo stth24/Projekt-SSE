@@ -46,39 +46,40 @@ Seq[Any](format.raw/*7.32*/("""
         <link rel="stylesheet" href=""""),_display_(/*16.39*/routes/*16.45*/.Assets.versioned("lib/bootstrap/css/bootstrap.css")),format.raw/*16.97*/("""">
         <link rel="stylesheet" media="screen" href=""""),_display_(/*17.54*/routes/*17.60*/.Assets.versioned("font-awesome/css/font-awesome.min.css")),format.raw/*17.118*/("""">
         <link rel="stylesheet" media="screen" href=""""),_display_(/*18.54*/routes/*18.60*/.Assets.versioned("stylesheets/main.css")),format.raw/*18.101*/("""">
+    <script type="text/javascript" src=""""),_display_(/*19.42*/routes/*19.48*/.Assets.versioned("/javascripts/jquery-3.2.1.min.js")),format.raw/*19.101*/(""""></script>
     </head>
     <body>
-        """),format.raw/*22.31*/("""
-        """),format.raw/*23.9*/("""<div class="container-fluid">
+        """),format.raw/*23.31*/("""
+        """),format.raw/*24.9*/("""<div class="container-fluid">
 
                     <div class="row header">
                         <div class="col-xs-12">
-                        """),_display_(/*27.26*/header()),format.raw/*27.34*/("""
-                        """),format.raw/*28.25*/("""</div>
+                        """),_display_(/*28.26*/header()),format.raw/*28.34*/("""
+                        """),format.raw/*29.25*/("""</div>
 
             </div>
 
                     <div class="row">
                         <div class="col-sm-3 navigation">
-                        """),_display_(/*34.26*/navigation()),format.raw/*34.38*/("""
-                        """),format.raw/*35.25*/("""</div>
+                        """),_display_(/*35.26*/navigation()),format.raw/*35.38*/("""
+                        """),format.raw/*36.25*/("""</div>
                         <div class="col-sm-9 content">
-                        """),_display_(/*37.26*/content),format.raw/*37.33*/("""
-                        """),format.raw/*38.25*/("""</div>
+                        """),_display_(/*38.26*/content),format.raw/*38.33*/("""
+                        """),format.raw/*39.25*/("""</div>
 
             </div>
 
                     <div class="row footer">
                         <div class="col-xs-12">
-                        """),_display_(/*44.26*/footer()),format.raw/*44.34*/("""
-                        """),format.raw/*45.25*/("""</div>
+                        """),_display_(/*45.26*/footer()),format.raw/*45.34*/("""
+                        """),format.raw/*46.25*/("""</div>
                     </div>
 
         </div>
 
-        <script type='text/javascript' src='"""),_display_(/*50.46*/routes/*50.52*/.Assets.versioned("lib/jquery/jquery.min.js")),format.raw/*50.97*/("""'></script>
-        <script type='text/javascript' src='"""),_display_(/*51.46*/routes/*51.52*/.Assets.versioned("lib/bootstrap/js/bootstrap.js")),format.raw/*51.102*/("""'></script>
-        <script src=""""),_display_(/*52.23*/routes/*52.29*/.Assets.versioned("javascripts/main.js")),format.raw/*52.69*/("""" type="text/javascript"></script>
+        <script type='text/javascript' src='"""),_display_(/*51.46*/routes/*51.52*/.Assets.versioned("lib/jquery/jquery.min.js")),format.raw/*51.97*/("""'></script>
+        <script type='text/javascript' src='"""),_display_(/*52.46*/routes/*52.52*/.Assets.versioned("lib/bootstrap/js/bootstrap.js")),format.raw/*52.102*/("""'></script>
+        <script src=""""),_display_(/*53.23*/routes/*53.29*/.Assets.versioned("javascripts/main.js")),format.raw/*53.69*/("""" type="text/javascript"></script>
     </body>
 </html>
 """))
@@ -106,11 +107,11 @@ Seq[Any](format.raw/*7.32*/("""
 object main extends main_Scope0.main
               /*
                   -- GENERATED --
-                  DATE: Tue May 30 15:12:46 CEST 2017
+                  DATE: Tue Jun 06 01:42:21 CEST 2017
                   SOURCE: C:/Users/Stefan Theissl/servSE/projekt/Projekt-SSE/projectmanagment-play/app/views/main.scala.html
-                  HASH: 4bed029e2d10d411fd1b6c07927a288c7bc3a5bd
-                  MATRIX: 997->255|1122->285|1150->287|1230->392|1266->401|1301->409|1327->414|1422->482|1437->488|1498->527|1566->568|1581->574|1654->626|1737->682|1752->688|1832->746|1915->802|1930->808|1993->849|2055->972|2091->981|2267->1130|2296->1138|2349->1163|2525->1312|2558->1324|2611->1349|2725->1436|2753->1443|2806->1468|2979->1614|3008->1622|3061->1647|3184->1743|3199->1749|3265->1794|3349->1851|3364->1857|3436->1907|3497->1941|3512->1947|3573->1987
-                  LINES: 32->7|37->7|39->9|42->12|43->13|43->13|43->13|45->15|45->15|45->15|46->16|46->16|46->16|47->17|47->17|47->17|48->18|48->18|48->18|51->22|52->23|56->27|56->27|57->28|63->34|63->34|64->35|66->37|66->37|67->38|73->44|73->44|74->45|79->50|79->50|79->50|80->51|80->51|80->51|81->52|81->52|81->52
+                  HASH: 38760744fbb36c0b10b20e15671c329bcdbf4f75
+                  MATRIX: 997->255|1122->285|1150->287|1230->392|1266->401|1301->409|1327->414|1422->482|1437->488|1498->527|1566->568|1581->574|1654->626|1737->682|1752->688|1832->746|1915->802|1930->808|1993->849|2064->893|2079->899|2154->952|2225->1084|2261->1093|2437->1242|2466->1250|2519->1275|2695->1424|2728->1436|2781->1461|2895->1548|2923->1555|2976->1580|3149->1726|3178->1734|3231->1759|3354->1855|3369->1861|3435->1906|3519->1963|3534->1969|3606->2019|3667->2053|3682->2059|3743->2099
+                  LINES: 32->7|37->7|39->9|42->12|43->13|43->13|43->13|45->15|45->15|45->15|46->16|46->16|46->16|47->17|47->17|47->17|48->18|48->18|48->18|49->19|49->19|49->19|52->23|53->24|57->28|57->28|58->29|64->35|64->35|65->36|67->38|67->38|68->39|74->45|74->45|75->46|80->51|80->51|80->51|81->52|81->52|81->52|82->53|82->53|82->53
                   -- GENERATED --
               */
           

@@ -28,12 +28,11 @@ public class Project extends Model {
 
     public static Finder<Long, Project> find = new Finder<Long, Project>(Project.class);
 
-    public Project(Long id, String name, String beschreibung, String projektdauer, byte[] image, String imagePath, List<ProjectHolder> projectHolders, List<ProjectTask> projectTasks) {
+    public Project(Long id, String name, String beschreibung, String projektdauer, String imagePath, List<ProjectHolder> projectHolders, List<ProjectTask> projectTasks) {
         this.id = id;
         this.name = name;
         this.beschreibung = beschreibung;
         this.projektdauer = projektdauer;
-        this.imagePath = imagePath;
         this.imagePath = imagePath;
         this.projectHolders = projectHolders;
         this.projectTasks = projectTasks;

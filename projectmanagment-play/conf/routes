@@ -40,6 +40,7 @@ GET     /deleteworker/:id          controllers.WorkerController.delete(id: Long)
 #Project
 GET     /project                    controllers.ProjectController.list()
 GET     /project/:id                controllers.ProjectController.show(id: Long)
+GET     /projectsearch/:name              controllers.ProjectController.search(name: String)
 POST    /project                   controllers.ProjectController.create()
 GET     /deleteproject/:id          controllers.ProjectController.delete(id: Long)
 

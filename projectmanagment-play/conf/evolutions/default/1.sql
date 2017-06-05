@@ -15,7 +15,6 @@ create table project (
   name                          varchar(255),
   beschreibung                  varchar(255),
   projektdauer                  varchar(255),
-  image                         varbinary(255),
   image_path                    varchar(255),
   constraint pk_project primary key (project_id)
 );

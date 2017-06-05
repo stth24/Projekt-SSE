@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Stefan Theissl/servSE/projekt/Projekt-SSE/projectmanagment-play/conf/routes
-// @DATE:Tue May 30 15:12:44 CEST 2017
+// @DATE:Tue Jun 06 00:44:34 CEST 2017
 
 package router
 
@@ -28,13 +28,13 @@ class Routes(
   WorkerController_5: controllers.WorkerController,
   // @LINE:41
   ProjectController_4: controllers.ProjectController,
-  // @LINE:47
-  ProjectHolderController_2: controllers.ProjectHolderController,
   // @LINE:48
-  ProjectTaskController_1: controllers.ProjectTaskController,
+  ProjectHolderController_2: controllers.ProjectHolderController,
   // @LINE:49
+  ProjectTaskController_1: controllers.ProjectTaskController,
+  // @LINE:50
   WorkerTaskController_3: controllers.WorkerTaskController,
-  // @LINE:54
+  // @LINE:55
   Assets_7: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -53,13 +53,13 @@ class Routes(
     WorkerController_5: controllers.WorkerController,
     // @LINE:41
     ProjectController_4: controllers.ProjectController,
-    // @LINE:47
-    ProjectHolderController_2: controllers.ProjectHolderController,
     // @LINE:48
-    ProjectTaskController_1: controllers.ProjectTaskController,
+    ProjectHolderController_2: controllers.ProjectHolderController,
     // @LINE:49
+    ProjectTaskController_1: controllers.ProjectTaskController,
+    // @LINE:50
     WorkerTaskController_3: controllers.WorkerTaskController,
-    // @LINE:54
+    // @LINE:55
     Assets_7: controllers.Assets
   ) = this(errorHandler, HomeController_0, FormController_6, CustomerController_9, TaskController_8, WorkerController_5, ProjectController_4, ProjectHolderController_2, ProjectTaskController_1, WorkerTaskController_3, Assets_7, "/")
 
@@ -97,6 +97,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """deleteworker/""" + "$" + """id<[^/]+>""", """controllers.WorkerController.delete(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """project""", """controllers.ProjectController.list()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """project/""" + "$" + """id<[^/]+>""", """controllers.ProjectController.show(id:Long)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """projectsearch/""" + "$" + """name<[^/]+>""", """controllers.ProjectController.search(name:String)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """project""", """controllers.ProjectController.create()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """deleteproject/""" + "$" + """id<[^/]+>""", """controllers.ProjectController.delete(id:Long)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """projectholder""", """controllers.ProjectHolderController.create()"""),
@@ -485,10 +486,27 @@ class Routes(
   )
 
   // @LINE:43
-  private[this] lazy val controllers_ProjectController_create22_route = Route("POST",
+  private[this] lazy val controllers_ProjectController_search22_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("projectsearch/"), DynamicPart("name", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_ProjectController_search22_invoker = createInvoker(
+    ProjectController_4.search(fakeValue[String]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ProjectController",
+      "search",
+      Seq(classOf[String]),
+      "GET",
+      """""",
+      this.prefix + """projectsearch/""" + "$" + """name<[^/]+>"""
+    )
+  )
+
+  // @LINE:44
+  private[this] lazy val controllers_ProjectController_create23_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("project")))
   )
-  private[this] lazy val controllers_ProjectController_create22_invoker = createInvoker(
+  private[this] lazy val controllers_ProjectController_create23_invoker = createInvoker(
     ProjectController_4.create(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -501,11 +519,11 @@ class Routes(
     )
   )
 
-  // @LINE:44
-  private[this] lazy val controllers_ProjectController_delete23_route = Route("GET",
+  // @LINE:45
+  private[this] lazy val controllers_ProjectController_delete24_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deleteproject/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_ProjectController_delete23_invoker = createInvoker(
+  private[this] lazy val controllers_ProjectController_delete24_invoker = createInvoker(
     ProjectController_4.delete(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -518,11 +536,11 @@ class Routes(
     )
   )
 
-  // @LINE:47
-  private[this] lazy val controllers_ProjectHolderController_create24_route = Route("POST",
+  // @LINE:48
+  private[this] lazy val controllers_ProjectHolderController_create25_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("projectholder")))
   )
-  private[this] lazy val controllers_ProjectHolderController_create24_invoker = createInvoker(
+  private[this] lazy val controllers_ProjectHolderController_create25_invoker = createInvoker(
     ProjectHolderController_2.create(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -535,11 +553,11 @@ class Routes(
     )
   )
 
-  // @LINE:48
-  private[this] lazy val controllers_ProjectTaskController_create25_route = Route("POST",
+  // @LINE:49
+  private[this] lazy val controllers_ProjectTaskController_create26_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("projecttask")))
   )
-  private[this] lazy val controllers_ProjectTaskController_create25_invoker = createInvoker(
+  private[this] lazy val controllers_ProjectTaskController_create26_invoker = createInvoker(
     ProjectTaskController_1.create(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -552,11 +570,11 @@ class Routes(
     )
   )
 
-  // @LINE:49
-  private[this] lazy val controllers_WorkerTaskController_create26_route = Route("POST",
+  // @LINE:50
+  private[this] lazy val controllers_WorkerTaskController_create27_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("wokertask")))
   )
-  private[this] lazy val controllers_WorkerTaskController_create26_invoker = createInvoker(
+  private[this] lazy val controllers_WorkerTaskController_create27_invoker = createInvoker(
     WorkerTaskController_3.create(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -569,11 +587,11 @@ class Routes(
     )
   )
 
-  // @LINE:54
-  private[this] lazy val controllers_Assets_versioned27_route = Route("GET",
+  // @LINE:55
+  private[this] lazy val controllers_Assets_versioned28_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned27_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned28_invoker = createInvoker(
     Assets_7.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -722,39 +740,45 @@ class Routes(
       }
   
     // @LINE:43
-    case controllers_ProjectController_create22_route(params) =>
-      call { 
-        controllers_ProjectController_create22_invoker.call(ProjectController_4.create())
+    case controllers_ProjectController_search22_route(params) =>
+      call(params.fromPath[String]("name", None)) { (name) =>
+        controllers_ProjectController_search22_invoker.call(ProjectController_4.search(name))
       }
   
     // @LINE:44
-    case controllers_ProjectController_delete23_route(params) =>
-      call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_ProjectController_delete23_invoker.call(ProjectController_4.delete(id))
+    case controllers_ProjectController_create23_route(params) =>
+      call { 
+        controllers_ProjectController_create23_invoker.call(ProjectController_4.create())
       }
   
-    // @LINE:47
-    case controllers_ProjectHolderController_create24_route(params) =>
-      call { 
-        controllers_ProjectHolderController_create24_invoker.call(ProjectHolderController_2.create())
+    // @LINE:45
+    case controllers_ProjectController_delete24_route(params) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_ProjectController_delete24_invoker.call(ProjectController_4.delete(id))
       }
   
     // @LINE:48
-    case controllers_ProjectTaskController_create25_route(params) =>
+    case controllers_ProjectHolderController_create25_route(params) =>
       call { 
-        controllers_ProjectTaskController_create25_invoker.call(ProjectTaskController_1.create())
+        controllers_ProjectHolderController_create25_invoker.call(ProjectHolderController_2.create())
       }
   
     // @LINE:49
-    case controllers_WorkerTaskController_create26_route(params) =>
+    case controllers_ProjectTaskController_create26_route(params) =>
       call { 
-        controllers_WorkerTaskController_create26_invoker.call(WorkerTaskController_3.create())
+        controllers_ProjectTaskController_create26_invoker.call(ProjectTaskController_1.create())
       }
   
-    // @LINE:54
-    case controllers_Assets_versioned27_route(params) =>
+    // @LINE:50
+    case controllers_WorkerTaskController_create27_route(params) =>
+      call { 
+        controllers_WorkerTaskController_create27_invoker.call(WorkerTaskController_3.create())
+      }
+  
+    // @LINE:55
+    case controllers_Assets_versioned28_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned27_invoker.call(Assets_7.versioned(path, file))
+        controllers_Assets_versioned28_invoker.call(Assets_7.versioned(path, file))
       }
   }
 }

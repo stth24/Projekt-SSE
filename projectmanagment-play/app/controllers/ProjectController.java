@@ -7,6 +7,7 @@ import models.ProjectTask;
 import models.Task;
 import org.h2.store.fs.FileUtils;
 import play.data.Form;
+import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Http;
 import play.mvc.Result;
@@ -28,6 +29,7 @@ public class ProjectController extends Controller{
 
         List<Project> projectList = Project.find.all();
 
+//        return ok(views.html.projectList.render(projectList, "Gesamte Liste"));
         return ok(views.html.projectList.render(projectList));
     }
 
@@ -36,6 +38,8 @@ public class ProjectController extends Controller{
         
         Project project = Project.find.byId(id);
 
+//        String json = Json.stringify(Json.toJson(project));
+//        return ok(json);
         return ok(views.html.project.render(project));
 
     }
@@ -88,6 +92,15 @@ public class ProjectController extends Controller{
         return redirect(routes.ProjectController.list());
 
 
+    }
+
+    public Result search(String name){
+
+        List<Project> projectList = Project.find.where().ilike("name", name + "%").findList();
+//        String param = "Suchwort: " + name;
+//        String json = Json.stringify(Json.toJson(projectList));
+//        return ok(json);
+        return ok(views.html.projectList.render(projectList));
     }
 
 
