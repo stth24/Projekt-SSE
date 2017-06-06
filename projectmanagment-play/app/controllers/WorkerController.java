@@ -24,7 +24,8 @@ public class WorkerController extends Controller {
     }
 
     public Result show(Long id) {
-        return ok();
+        Worker worker = Worker.find.byId(id);
+        return ok(views.html.worker.render(worker));
     }
 
     public Result create() {
@@ -37,11 +38,8 @@ public class WorkerController extends Controller {
     public Result delete(Long id) {
 
         Worker worker = Worker.find.byId(id);
-
-
-
-
-        return redirect(routes.ProjectController.list());
+        worker.delete();
+        return redirect(routes.WorkerController.list());
     }
 
 

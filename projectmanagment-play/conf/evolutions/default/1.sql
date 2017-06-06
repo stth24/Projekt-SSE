@@ -47,7 +47,6 @@ create table worker (
   vorname                       varchar(255),
   nachname                      varchar(255),
   abteilung                     varchar(255),
-  arbeitszeit                   bigint,
   constraint pk_worker primary key (workerid)
 );
 

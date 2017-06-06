@@ -28,10 +28,10 @@ public class TaskController extends Controller{
     public Result show(Long id) {
 
         Task task = Task.find.byId(id);
-        List<Task> taskList = new ArrayList<>();
-        taskList.add(task);
-
-        return ok(views.html.taskList.render(taskList));
+//        List<Task> taskList = new ArrayList<>();
+//        taskList.add(task);
+        return ok(views.html.task.render(task));
+//        return ok(views.html.taskList.render(taskList));
     }
 
     public Result create() {
@@ -45,7 +45,6 @@ public class TaskController extends Controller{
     public Result delete(Long id) {
 
         Task task = Task.find.byId(id);
-        task.save();
         task.delete();
 
 

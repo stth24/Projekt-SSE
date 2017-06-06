@@ -28,10 +28,9 @@ public class CustomerController extends Controller {
 
     public Result show(Long id) {
 
-        List<Customer> customerList = new ArrayList<>();
-        customerList.add(Customer.find.byId(id));
+        Customer customer = Customer.find.byId(id);
 
-        return ok(views.html.customerList.render(customerList));
+        return ok(views.html.customer.render(customer));
     }
 
     public Result create() {
@@ -45,7 +44,6 @@ public class CustomerController extends Controller {
 
         Customer customer = Customer.find.byId(id);
 
-        customer.save();
         customer.delete();
 
         return redirect(routes.CustomerController.list());

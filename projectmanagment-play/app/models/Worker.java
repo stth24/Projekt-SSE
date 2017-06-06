@@ -20,20 +20,11 @@ public class Worker extends Model {
     private String vorname;
     private String nachname;
     private String abteilung;
-    private long arbeitszeit;
 
 
 
     public static Finder<Long, Worker> find = new Finder<Long, Worker>(Worker.class);
 
-
-    public Worker(Long id, String vorname, String nachname, String abteilung, long arbeitszeit) {
-        this.id = id;
-        this.vorname = vorname;
-        this.nachname = nachname;
-        this.abteilung = abteilung;
-        this.arbeitszeit = arbeitszeit;
-    }
 
     public Long getId() {
         return id;
@@ -65,14 +56,6 @@ public class Worker extends Model {
 
     public void setAbteilung(String abteilung) {
         this.abteilung = abteilung;
-    }
-
-    public long getArbeitszeit() {
-        return arbeitszeit;
-    }
-
-    public void setArbeitszeit(long arbeitszeit) {
-        this.arbeitszeit = arbeitszeit;
     }
 
     public static Finder<Long, Worker> getFind() {

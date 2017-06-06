@@ -3,6 +3,7 @@ package controllers;
 import com.google.inject.Inject;
 import models.Customer;
 import models.Project;
+import models.Task;
 import org.h2.store.fs.FileUtils;
 import play.data.Form;
 import play.mvc.Controller;
@@ -34,11 +35,12 @@ public class ProjectController extends Controller{
 
         
         Project project = Project.find.byId(id);
-        List<Project> projectList = new ArrayList<>();
-        projectList.add(project);
+//        List<Project> projectList = new ArrayList<>();
+//        projectList.add(project);
 //        String json = Json.stringify(Json.toJson(project));
 //        return ok(json);
-        return ok(views.html.projectList.render(projectList));
+//        return ok(views.html.projectList.render(projectList));
+        return ok(views.html.project.render(project));
 
     }
 
@@ -70,8 +72,12 @@ public class ProjectController extends Controller{
     public Result delete(Long id) {
 
         Project project = Project.find.byId(id);
+        List<Task> taskList = project.getTasks();
+        for(Task t: taskList)
+        {
+            t.delete();
+        }
 
-        project.save();
         project.delete();
 
         return redirect(routes.ProjectController.list());

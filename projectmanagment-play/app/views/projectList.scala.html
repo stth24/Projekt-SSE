@@ -3,6 +3,23 @@
 
 @main("Projekte"){
     <h1>Projekte</h1>
+
+    @*Search Area*@
+    <div class="row">
+        <div class="col-xs-12">
+            <input type="text" id="searchparam" placeholder="Suchbegriff"/>
+            <button id="searchbtn" class="btn btn-success">Suchen</button>
+        </div>
+    </div>
+
+    <script>
+            $('#searchbtn').click(function(){
+                var prm = $('#searchparam').val();
+//                alert(prm);
+                window.location = "/projectsearch/" + prm;
+            });
+    </script>
+
     @if(projectList.size() > 0) {
 
         <div class="row">
@@ -57,18 +74,5 @@
         <a href="@routes.FormController.addProject()" class="btn btn-success"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Neues Projekt anlegen</a>
     </div>
     <br>
-    <div class="row">
-        <div class="col-xs-12">
-            <input type="text" id="searchparam" placeholder="Suchbegriff"/>
-            <button id="searchbtn" class="btn btn-success">Suchen</button>
-        </div>
-    </div>
 
-    <script>
-            $('#searchbtn').click(function(){
-                var prm = $('#searchparam').val();
-//                alert(prm);
-                window.location = "/projectsearch/" + prm;
-            });
-    </script>
 }
