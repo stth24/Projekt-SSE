@@ -58,7 +58,7 @@ Seq[Any](format.raw/*1.4*/("""
 object footer extends footer_Scope0.footer
               /*
                   -- GENERATED --
-                  DATE: Tue May 30 15:12:46 CEST 2017
+                  DATE: Tue Jun 06 04:36:45 CEST 2017
                   SOURCE: C:/Users/Stefan Theissl/servSE/projekt/Projekt-SSE/projectmanagment-play/app/views/footer.scala.html
                   HASH: ba0401525572d99d0e50bb326c43c75aa2ba3571
                   MATRIX: 740->1|836->3|864->5

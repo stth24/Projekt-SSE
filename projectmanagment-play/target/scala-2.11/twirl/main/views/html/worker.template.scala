@@ -82,7 +82,7 @@ Seq[Any](format.raw/*1.18*/("""
 object worker extends worker_Scope0.worker
               /*
                   -- GENERATED --
-                  DATE: Tue Jun 06 04:06:56 CEST 2017
+                  DATE: Tue Jun 06 04:36:46 CEST 2017
                   SOURCE: C:/Users/Stefan Theissl/servSE/projekt/Projekt-SSE/projectmanagment-play/app/views/worker.scala.html
                   HASH: 199063c20a4a023774bd6a6d81e997fb977fc5d2
                   MATRIX: 747->1|858->17|890->24|917->43|955->44|985->48|1015->53|1029->59|1062->72|1090->74|1104->80|1138->94|1462->391|1477->397|1506->405|1555->427|1570->433|1604->446|1653->468|1668->474|1703->488|1752->510|1767->516|1803->531|1966->667|1981->673|2026->697

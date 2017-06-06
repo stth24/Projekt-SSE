@@ -26,6 +26,9 @@ public class Task extends Model {
     @Transient
     private String tmpproject;
 
+//    @ManyToMany
+//    private List<Worker> workerList;
+
     public static Finder<Long, Task> find = new Finder<Long, Task>(Task.class);
 
     public String getName() {
@@ -83,6 +86,14 @@ public class Task extends Model {
     public void setTmpproject(String tmpproject) {
         this.tmpproject = tmpproject;
     }
+
+//    public List<Worker> getWorkerList() {
+//        return workerList;
+//    }
+//
+//    public void setWorkerList(List<Worker> workerList) {
+//        this.workerList = workerList;
+//    }
 
     @Override
     public String toString() {

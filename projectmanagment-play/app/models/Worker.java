@@ -1,7 +1,6 @@
 package models;
 
 
-import com.avaje.ebean.Finder;
 import com.avaje.ebean.Model;
 
 import javax.persistence.*;
@@ -21,6 +20,8 @@ public class Worker extends Model {
     private String nachname;
     private String abteilung;
 
+//    @ManyToMany(mappedBy = "worker")
+//    private List<Task> tasks;
 
 
     public static Finder<Long, Worker> find = new Finder<Long, Worker>(Worker.class);
@@ -65,4 +66,12 @@ public class Worker extends Model {
     public static void setFind(Finder<Long, Worker> find) {
         Worker.find = find;
     }
+
+//    public List<Task> getTasks() {
+//        return tasks;
+//    }
+//
+//    public void setTasks(List<Task> tasks) {
+//        this.tasks = tasks;
+//    }
 }

@@ -71,7 +71,7 @@ Seq[Any](format.raw/*1.42*/("""
 object addCustomer extends addCustomer_Scope0.addCustomer
               /*
                   -- GENERATED --
-                  DATE: Tue May 30 15:12:46 CEST 2017
+                  DATE: Tue Jun 06 04:36:45 CEST 2017
                   SOURCE: C:/Users/Stefan Theissl/servSE/projekt/Projekt-SSE/projectmanagment-play/app/views/addCustomer.scala.html
                   HASH: cc6272fc1faf3ec8ae922ac6261c0fb46201e039
                   MATRIX: 775->1|910->41|940->46|968->66|1006->67|1038->73|1246->254|1261->260|1356->345|1396->346|1440->363|1455->369|1553->446|1595->461|1610->467|1715->550|1761->568|1956->732|1993->742

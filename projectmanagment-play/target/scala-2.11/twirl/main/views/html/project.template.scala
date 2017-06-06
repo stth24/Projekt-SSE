@@ -93,7 +93,7 @@ Seq[Any](format.raw/*1.20*/("""
 object project extends project_Scope0.project
               /*
                   -- GENERATED --
-                  DATE: Tue Jun 06 03:34:07 CEST 2017
+                  DATE: Tue Jun 06 04:36:45 CEST 2017
                   SOURCE: C:/Users/Stefan Theissl/servSE/projekt/Projekt-SSE/projectmanagment-play/app/views/project.scala.html
                   HASH: 89bca81331e78551418bddf9cf25bd1063eac648
                   MATRIX: 750->1|863->19|895->26|919->42|957->43|987->47|1017->52|1032->59|1060->67|1479->459|1495->466|1524->474|1577->500|1593->507|1624->517|1677->543|1693->550|1732->568|1785->594|1801->601|1837->616|1890->642|1906->649|1949->671|2042->737|2089->768|2128->769|2176->789|2208->794|2221->798|2252->808|2307->832|2353->850|2564->1034|2579->1040|2625->1065

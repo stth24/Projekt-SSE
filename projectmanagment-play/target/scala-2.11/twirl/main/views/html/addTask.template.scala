@@ -21,15 +21,15 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-class addTask extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template2[play.data.Form[Task],List[Project],play.twirl.api.HtmlFormat.Appendable] {
+class addTask extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template3[play.data.Form[Task],List[Project],List[Worker],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(taskForm: play.data.Form[Task], projectList: List[Project]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(taskForm: play.data.Form[Task], projectList: List[Project], workerList: List[Worker]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.62*/("""
+Seq[Any](format.raw/*1.88*/("""
 
 """),_display_(/*3.2*/main("Neuer Task")/*3.20*/{_display_(Seq[Any](format.raw/*3.21*/("""
     """),format.raw/*4.5*/("""<div class="row">
@@ -61,9 +61,9 @@ Seq[Any](format.raw/*1.62*/("""
     }
   }
 
-  def render(taskForm:play.data.Form[Task],projectList:List[Project]): play.twirl.api.HtmlFormat.Appendable = apply(taskForm,projectList)
+  def render(taskForm:play.data.Form[Task],projectList:List[Project],workerList:List[Worker]): play.twirl.api.HtmlFormat.Appendable = apply(taskForm,projectList,workerList)
 
-  def f:((play.data.Form[Task],List[Project]) => play.twirl.api.HtmlFormat.Appendable) = (taskForm,projectList) => apply(taskForm,projectList)
+  def f:((play.data.Form[Task],List[Project],List[Worker]) => play.twirl.api.HtmlFormat.Appendable) = (taskForm,projectList,workerList) => apply(taskForm,projectList,workerList)
 
   def ref: this.type = this
 
@@ -76,10 +76,10 @@ Seq[Any](format.raw/*1.62*/("""
 object addTask extends addTask_Scope0.addTask
               /*
                   -- GENERATED --
-                  DATE: Tue Jun 06 02:21:34 CEST 2017
+                  DATE: Tue Jun 06 04:36:45 CEST 2017
                   SOURCE: C:/Users/Stefan Theissl/servSE/projekt/Projekt-SSE/projectmanagment-play/app/views/addTask.scala.html
-                  HASH: ab8130ca08ea62455a8a903c38f16772458bba2f
-                  MATRIX: 777->1|932->61|962->66|988->84|1026->85|1058->91|1267->273|1282->279|1372->360|1411->361|1453->376|1468->382|1578->470|1620->485|1635->491|1746->580|1788->595|1803->601|1929->705|1971->720|1986->726|2283->1002|2327->1018|2522->1182|2559->1192
+                  HASH: 6ac5d8898936354dbf7d23448171d907e27ac3a3
+                  MATRIX: 790->1|971->87|1001->92|1027->110|1065->111|1097->117|1306->299|1321->305|1411->386|1450->387|1492->402|1507->408|1617->496|1659->511|1674->517|1785->606|1827->621|1842->627|1968->731|2010->746|2025->752|2322->1028|2366->1044|2561->1208|2598->1218
                   LINES: 27->1|32->1|34->3|34->3|34->3|35->4|43->12|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|47->16|47->16|52->21|54->23|55->24|56->25
                   -- GENERATED --
               */

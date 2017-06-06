@@ -33,7 +33,8 @@ public class FormController extends Controller {
 
         Form<Task> taskForm = formFactory.form(Task.class);
         List<Project> projectList = Project.find.all();
-        return ok(views.html.addTask.render(taskForm, projectList));
+        List<Worker> workerList = Worker.find.all();
+        return ok(views.html.addTask.render(taskForm, projectList, workerList));
     }
 
     public Result addWorker(){

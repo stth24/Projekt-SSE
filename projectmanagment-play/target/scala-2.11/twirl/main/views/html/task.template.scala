@@ -85,7 +85,7 @@ Seq[Any](format.raw/*1.14*/("""
 object task extends task_Scope0.task
               /*
                   -- GENERATED --
-                  DATE: Tue Jun 06 03:43:04 CEST 2017
+                  DATE: Tue Jun 06 04:36:46 CEST 2017
                   SOURCE: C:/Users/Stefan Theissl/servSE/projekt/Projekt-SSE/projectmanagment-play/app/views/task.scala.html
                   HASH: 53dd7f72d62c6d6abac30e7d24fdbc2acb8ea44d
                   MATRIX: 741->1|848->13|880->20|904->36|942->37|972->41|1002->46|1014->50|1044->60|1395->384|1408->388|1437->396|1486->418|1499->422|1530->432|1579->454|1592->458|1631->476|1680->498|1693->502|1725->513|1774->535|1787->539|1831->562|2009->713|2024->719|2067->741
