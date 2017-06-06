@@ -45,37 +45,47 @@ Seq[Any](format.raw/*1.30*/("""
                             <td>Name</td>
                             <td>Beschreibung</td>
                             <td>Projektdauer</td>
+                            <td>Kunde</td>
+                            <td>Aufgaben</td>
                     <tbody>
-                    """),_display_(/*18.22*/for(project <- projectList) yield /*18.49*/{_display_(Seq[Any](format.raw/*18.50*/("""
-                        """),format.raw/*19.25*/("""<tr>
-                            <td>"""),_display_(/*20.34*/project/*20.41*/.getId()),format.raw/*20.49*/("""</td>
-                            <td>"""),_display_(/*21.34*/project/*21.41*/.getName()),format.raw/*21.51*/("""</td>
-                            <td>"""),_display_(/*22.34*/project/*22.41*/.getBeschreibung()),format.raw/*22.59*/("""</td>
-                            <td>"""),_display_(/*23.34*/project/*23.41*/.getProjektdauer()),format.raw/*23.59*/("""</td>
+                    """),_display_(/*20.22*/for(project <- projectList) yield /*20.49*/{_display_(Seq[Any](format.raw/*20.50*/("""
+                        """),format.raw/*21.25*/("""<tr>
+                            <td>"""),_display_(/*22.34*/project/*22.41*/.getId()),format.raw/*22.49*/("""</td>
+                            <td>"""),_display_(/*23.34*/project/*23.41*/.getName()),format.raw/*23.51*/("""</td>
+                            <td>"""),_display_(/*24.34*/project/*24.41*/.getBeschreibung()),format.raw/*24.59*/("""</td>
+                            <td>"""),_display_(/*25.34*/project/*25.41*/.projektdauer()),format.raw/*25.56*/("""</td>
+                            <td>"""),_display_(/*26.34*/project/*26.41*/.getCustomer.getName()),format.raw/*26.63*/("""</td>
+                            <td>
+                                <ul>
+                                """),_display_(/*29.34*/for(task <- project.getTasks()) yield /*29.65*/{_display_(Seq[Any](format.raw/*29.66*/("""
+                                    """),format.raw/*30.37*/("""<li>"""),_display_(/*30.42*/task/*30.46*/.getName()),format.raw/*30.56*/("""</li>
+                                """)))}),format.raw/*31.34*/("""
+                                """),format.raw/*32.33*/("""</ul>
+                            </td>
 
                             <td>
-                                <a href=""""),_display_(/*26.43*/routes/*26.49*/.ProjectController.show(project.getId())),format.raw/*26.89*/("""" class="btn btn-danger"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i></a>
-                                <a href=""""),_display_(/*27.43*/routes/*27.49*/.ProjectController.delete(project.getId())),format.raw/*27.91*/("""" class="btn btn-danger"><i class="glyphicon glyphicon-remove" aria-hidden="true"></i></a>
+                                <a href=""""),_display_(/*36.43*/routes/*36.49*/.ProjectController.show(project.getId())),format.raw/*36.89*/("""" class="btn btn-danger"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i></a>
+                                <a href=""""),_display_(/*37.43*/routes/*37.49*/.ProjectController.delete(project.getId())),format.raw/*37.91*/("""" class="btn btn-danger"><i class="glyphicon glyphicon-remove" aria-hidden="true"></i></a>
 
                             </td>
 
 
                         </tr>
 
-                    """)))}),format.raw/*34.22*/("""
-                    """),format.raw/*35.21*/("""</tbody>
+                    """)))}),format.raw/*44.22*/("""
+                    """),format.raw/*45.21*/("""</tbody>
                 </table>
             </div>
 
         </div>
-    """)))}/*40.7*/else/*40.11*/{_display_(Seq[Any](format.raw/*40.12*/("""
-        """),format.raw/*41.9*/("""<div class="warehouse-item">
+    """)))}/*50.7*/else/*50.11*/{_display_(Seq[Any](format.raw/*50.12*/("""
+        """),format.raw/*51.9*/("""<div class="warehouse-item">
             Kein Projekte vorhanden
         </div>
-    """)))}),format.raw/*44.6*/("""
+    """)))}),format.raw/*54.6*/("""
 
-    """),format.raw/*46.5*/("""<div class="new-holder">
-        <a href=""""),_display_(/*47.19*/routes/*47.25*/.FormController.addProject()),format.raw/*47.53*/("""" class="btn btn-success"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Neues Projekt anlegen</a>
+    """),format.raw/*56.5*/("""<div class="new-holder">
+        <a href=""""),_display_(/*57.19*/routes/*57.25*/.FormController.addProject()),format.raw/*57.53*/("""" class="btn btn-success"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Neues Projekt anlegen</a>
     </div>
     <br>
     <div class="row">
@@ -86,11 +96,11 @@ Seq[Any](format.raw/*1.30*/("""
     </div>
 
     <script>
-            $('#searchbtn').click(function()"""),format.raw/*58.45*/("""{"""),format.raw/*58.46*/("""
-                """),format.raw/*59.17*/("""var prm = $('#searchparam').val();
+            $('#searchbtn').click(function()"""),format.raw/*68.45*/("""{"""),format.raw/*68.46*/("""
+                """),format.raw/*69.17*/("""var prm = $('#searchparam').val();
 //                alert(prm);
                 window.location = "/projectsearch/" + prm;
-            """),format.raw/*62.13*/("""}"""),format.raw/*62.14*/(""");
+            """),format.raw/*72.13*/("""}"""),format.raw/*72.14*/(""");
     </script>
 """)))}))
       }
@@ -112,11 +122,11 @@ Seq[Any](format.raw/*1.30*/("""
 object projectList extends projectList_Scope0.projectList
               /*
                   -- GENERATED --
-                  DATE: Tue Jun 06 01:50:15 CEST 2017
+                  DATE: Tue Jun 06 03:02:18 CEST 2017
                   SOURCE: C:/Users/Stefan Theissl/servSE/projekt/Projekt-SSE/projectmanagment-play/app/views/projectList.scala.html
-                  HASH: a7bf672fe452004f3eb91e999c5e7f1a7dba19c9
-                  MATRIX: 764->1|887->29|919->36|943->52|981->53|1013->59|1062->83|1096->109|1135->111|1173->123|1604->527|1647->554|1686->555|1740->581|1806->620|1822->627|1851->635|1918->675|1934->682|1965->692|2032->732|2048->739|2087->757|2154->797|2170->804|2209->822|2321->907|2336->913|2397->953|2558->1087|2573->1093|2636->1135|2854->1322|2904->1344|3001->1424|3014->1428|3053->1429|3090->1439|3208->1527|3243->1535|3314->1579|3329->1585|3378->1613|3833->2040|3862->2041|3908->2059|4075->2198|4104->2199
-                  LINES: 27->1|32->1|35->4|35->4|35->4|36->5|37->6|37->6|37->6|39->8|49->18|49->18|49->18|50->19|51->20|51->20|51->20|52->21|52->21|52->21|53->22|53->22|53->22|54->23|54->23|54->23|57->26|57->26|57->26|58->27|58->27|58->27|65->34|66->35|71->40|71->40|71->40|72->41|75->44|77->46|78->47|78->47|78->47|89->58|89->58|90->59|93->62|93->62
+                  HASH: d13b944b4a60ea3e416941de3b3675b979114d69
+                  MATRIX: 764->1|887->29|919->36|943->52|981->53|1013->59|1062->83|1096->109|1135->111|1173->123|1695->618|1738->645|1777->646|1831->672|1897->711|1913->718|1942->726|2009->766|2025->773|2056->783|2123->823|2139->830|2178->848|2245->888|2261->895|2297->910|2364->950|2380->957|2423->979|2562->1091|2609->1122|2648->1123|2714->1161|2746->1166|2759->1170|2790->1180|2861->1220|2923->1254|3070->1374|3085->1380|3146->1420|3307->1554|3322->1560|3385->1602|3603->1789|3653->1811|3750->1891|3763->1895|3802->1896|3839->1906|3957->1994|3992->2002|4063->2046|4078->2052|4127->2080|4582->2507|4611->2508|4657->2526|4824->2665|4853->2666
+                  LINES: 27->1|32->1|35->4|35->4|35->4|36->5|37->6|37->6|37->6|39->8|51->20|51->20|51->20|52->21|53->22|53->22|53->22|54->23|54->23|54->23|55->24|55->24|55->24|56->25|56->25|56->25|57->26|57->26|57->26|60->29|60->29|60->29|61->30|61->30|61->30|61->30|62->31|63->32|67->36|67->36|67->36|68->37|68->37|68->37|75->44|76->45|81->50|81->50|81->50|82->51|85->54|87->56|88->57|88->57|88->57|99->68|99->68|100->69|103->72|103->72
                   -- GENERATED --
               */
           

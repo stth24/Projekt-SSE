@@ -8,6 +8,7 @@ import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,9 +28,10 @@ public class CustomerController extends Controller {
 
     public Result show(Long id) {
 
-        Customer customer = Customer.find.byId(id);
+        List<Customer> customerList = new ArrayList<>();
+        customerList.add(Customer.find.byId(id));
 
-        return ok(views.html.customer.render(customer));
+        return ok(views.html.customerList.render(customerList));
     }
 
     public Result create() {
@@ -42,16 +44,7 @@ public class CustomerController extends Controller {
     public Result delete(Long id) {
 
         Customer customer = Customer.find.byId(id);
-        List<ProjectHolder> holder = customer.getProjectHolders();
 
-
-        for(ProjectHolder oneholder : holder) {
-            oneholder.delete();
-        }
-
-
-
-        holder.clear();
         customer.save();
         customer.delete();
 

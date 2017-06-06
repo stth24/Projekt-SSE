@@ -12,6 +12,7 @@
                             <td>ID</td>
                             <td>Name</td>
                             <td>Branche</td>
+                            <td>Projekte</td>
 
                         </tr>
                     </thead>
@@ -21,6 +22,13 @@
                             <td>@customer.getId()</td>
                             <td>@customer.getName()</td>
                             <td>@customer.getBranche()</td>
+                            <td>
+                                <ul>
+                                    @for(project <- customer.getProjects()){
+                                        <li>@project.getName()</li>
+                                    }
+                                </ul>
+                            </td>
 
                             <td>
 

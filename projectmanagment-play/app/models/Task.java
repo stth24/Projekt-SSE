@@ -1,12 +1,8 @@
 package models;
 
-import com.avaje.ebean.Finder;
 import com.avaje.ebean.Model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -24,26 +20,13 @@ public class Task extends Model {
     private String beschreibung;
     private long dauer;
 
+    @ManyToOne
+    private Project project;
 
-    @OneToMany(mappedBy = "task")
-    private List<ProjectTask> projectTasks;
-
-    @OneToMany(mappedBy = "task")
-    private List<WorkerTask> workerTasks;
-
-
+    @Transient
+    private String tmpproject;
 
     public static Finder<Long, Task> find = new Finder<Long, Task>(Task.class);
-
-
-    public Task(Long id, String name, String beschreibung, long dauer, List<ProjectTask> projectTasks, List<WorkerTask> workerTasks) {
-        this.id = id;
-        this.name = name;
-        this.beschreibung = beschreibung;
-        this.dauer = dauer;
-        this.projectTasks = projectTasks;
-        this.workerTasks = workerTasks;
-    }
 
     public String getName() {
         return name;
@@ -69,22 +52,6 @@ public class Task extends Model {
         this.dauer = dauer;
     }
 
-    public List<ProjectTask> getProjectTasks() {
-        return projectTasks;
-    }
-
-    public void setProjectTasks(List<ProjectTask> projectTasks) {
-        this.projectTasks = projectTasks;
-    }
-
-    public List<WorkerTask> getWorkerTasks() {
-        return workerTasks;
-    }
-
-    public void setWorkerTasks(List<WorkerTask> workerTasks) {
-        this.workerTasks = workerTasks;
-    }
-
     public static Finder<Long, Task> getFind() {
         return find;
     }
@@ -101,14 +68,28 @@ public class Task extends Model {
         this.id = id;
     }
 
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
+    }
+
+    public String getTmpproject() {
+        return tmpproject;
+    }
+
+    public void setTmpproject(String tmpproject) {
+        this.tmpproject = tmpproject;
+    }
+
     @Override
     public String toString() {
         return "Task{" +
                 "name='" + name + '\'' +
                 ", beschreibung='" + beschreibung + '\'' +
                 ", dauer=" + dauer +
-                ", projectTasks=" + projectTasks +
-                ", workerTasks=" + workerTasks +
                 '}';
     }
 

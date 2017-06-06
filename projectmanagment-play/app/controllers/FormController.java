@@ -24,42 +24,20 @@ public class FormController extends Controller {
     public Result addProject(){
 
         Form<Project> projectForm = formFactory.form(Project.class);
-        return ok(views.html.addProject.render(projectForm));
+        List<Customer> customerList = Customer.find.all();
+        return ok(views.html.addProject.render(projectForm, customerList));
 
     }
 
     public Result addTask(){
 
         Form<Task> taskForm = formFactory.form(Task.class);
-        return ok(views.html.addTask.render(taskForm));
+        List<Project> projectList = Project.find.all();
+        return ok(views.html.addTask.render(taskForm, projectList));
     }
 
     public Result addWorker(){
         Form<Worker> workerForm = formFactory.form(Worker.class);
         return ok(views.html.addWorker.render(workerForm));
-    }
-
-    public Result addProjectTask() {
-
-        Form<ProjectTask> projectTaskForm = formFactory.form(ProjectTask.class);
-        List<Project> projectList = Project.find.all();
-        List<Task> taskList = Task.find.all();
-        return ok(views.html.addProjectTask.render(projectTaskForm, projectList, taskList));
-    }
-
-    public Result addProjectHolder() {
-
-        Form<ProjectHolder> projectHolderForm = formFactory.form(ProjectHolder.class);
-        List<Project> projectList = Project.find.all();
-        List<Customer> customerList = Customer.find.all();
-        return ok(views.html.addProjectHolder.render(projectHolderForm, projectList, customerList));
-    }
-
-    public Result addWorkerTask() {
-
-        Form<WorkerTask> workerTaskForm = formFactory.form(WorkerTask.class);
-        List<Worker> workerList = Worker.find.all();
-        List<Task> taskList = Task.find.all();
-        return ok(views.html.addWorkerTask.render(workerTaskForm, workerList, taskList));
     }
 }

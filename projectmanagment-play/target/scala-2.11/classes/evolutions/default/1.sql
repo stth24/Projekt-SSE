@@ -14,8 +14,8 @@ create table project (
   project_id                    bigint auto_increment not null,
   name                          varchar(255),
   beschreibung                  varchar(255),
-  projektdauer                  varchar(255),
   image_path                    varchar(255),
+  customer_customer_id          bigint,
   constraint pk_project primary key (project_id)
 );
 
@@ -38,6 +38,7 @@ create table task (
   name                          varchar(255),
   beschreibung                  varchar(255),
   dauer                         bigint,
+  project_project_id            bigint,
   constraint pk_task primary key (task_id)
 );
 
@@ -57,6 +58,9 @@ create table worker_task (
   constraint pk_worker_task primary key (workertask_id)
 );
 
+alter table project add constraint fk_project_customer_customer_id foreign key (customer_customer_id) references customer (customer_id) on delete restrict on update restrict;
+create index ix_project_customer_customer_id on project (customer_customer_id);
+
 alter table project_holder add constraint fk_project_holder_customer_customer_id foreign key (customer_customer_id) references customer (customer_id) on delete restrict on update restrict;
 create index ix_project_holder_customer_customer_id on project_holder (customer_customer_id);
 
@@ -69,6 +73,9 @@ create index ix_project_task_project_project_id on project_task (project_project
 alter table project_task add constraint fk_project_task_task_task_id foreign key (task_task_id) references task (task_id) on delete restrict on update restrict;
 create index ix_project_task_task_task_id on project_task (task_task_id);
 
+alter table task add constraint fk_task_project_project_id foreign key (project_project_id) references project (project_id) on delete restrict on update restrict;
+create index ix_task_project_project_id on task (project_project_id);
+
 alter table worker_task add constraint fk_worker_task_worker_workerid foreign key (worker_workerid) references worker (workerid) on delete restrict on update restrict;
 create index ix_worker_task_worker_workerid on worker_task (worker_workerid);
 
@@ -77,6 +84,9 @@ create index ix_worker_task_task_task_id on worker_task (task_task_id);
 
 
 # --- !Downs
+
+alter table project drop foreign key fk_project_customer_customer_id;
+drop index ix_project_customer_customer_id on project;
 
 alter table project_holder drop foreign key fk_project_holder_customer_customer_id;
 drop index ix_project_holder_customer_customer_id on project_holder;
@@ -89,6 +99,9 @@ drop index ix_project_task_project_project_id on project_task;
 
 alter table project_task drop foreign key fk_project_task_task_task_id;
 drop index ix_project_task_task_task_id on project_task;
+
+alter table task drop foreign key fk_task_project_project_id;
+drop index ix_task_project_project_id on task;
 
 alter table worker_task drop foreign key fk_worker_task_worker_workerid;
 drop index ix_worker_task_worker_workerid on worker_task;

@@ -1,9 +1,7 @@
 package controllers;
 
 import com.google.inject.Inject;
-import models.Task;
 import models.Worker;
-import models.WorkerTask;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;

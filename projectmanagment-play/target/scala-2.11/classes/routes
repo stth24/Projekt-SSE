@@ -12,10 +12,6 @@ GET     /addProject             controllers.FormController.addProject()
 GET     /addTask              controllers.FormController.addTask()
 GET     /addWorker             controllers.FormController.addWorker()
 
-GET     /addProjectTask      controllers.FormController.addProjectTask()
-GET     /addProjectHolder      controllers.FormController.addProjectHolder()
-GET     /addWorkerTask      controllers.FormController.addWorkerTask()
-
 
 #Customer
 GET     /product                    controllers.CustomerController.list()
@@ -43,13 +39,6 @@ GET     /project/:id                controllers.ProjectController.show(id: Long)
 GET     /projectsearch/:name              controllers.ProjectController.search(name: String)
 POST    /project                   controllers.ProjectController.create()
 GET     /deleteproject/:id          controllers.ProjectController.delete(id: Long)
-
-#ProjectHolder, ProjectTask, WorkerTask
-POST    /projectholder          controllers.ProjectHolderController.create()
-POST    /projecttask            controllers.ProjectTaskController.create()
-POST    /wokertask              controllers.WorkerTaskController.create()
-
-
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

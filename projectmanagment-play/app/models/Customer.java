@@ -23,7 +23,7 @@ public class Customer extends Model {
     private String branche;
 
     @OneToMany(mappedBy = "customer")
-    private List<ProjectHolder> projectHolders;
+    List<Project> projects;
 
     public static Finder<Long, Customer> find = new Finder<Long, Customer>(Customer.class);
 
@@ -33,16 +33,10 @@ public class Customer extends Model {
         return "Customer{" +
                 "name='" + name + '\'' +
                 ", branche='" + branche + '\'' +
-                ", projectHolders=" + projectHolders +
                 '}';
     }
 
-    public Customer(Long id, String name, String branche, List<ProjectHolder> projectHolders) {
-        this.id = id;
-        this.name = name;
-        this.branche = branche;
-        this.projectHolders = projectHolders;
-    }
+
 
     public String getName() {
         return name;
@@ -60,14 +54,6 @@ public class Customer extends Model {
         this.branche = branche;
     }
 
-    public List<ProjectHolder> getProjectHolders() {
-        return projectHolders;
-    }
-
-    public void setProjectHolders(List<ProjectHolder> projectHolders) {
-        this.projectHolders = projectHolders;
-    }
-
     public static Finder<Long, Customer> getFind() {
         return find;
     }
@@ -82,5 +68,13 @@ public class Customer extends Model {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public List<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(List<Project> projects) {
+        this.projects = projects;
     }
 }

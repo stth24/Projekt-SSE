@@ -14,13 +14,23 @@
                             <td>Name</td>
                             <td>Beschreibung</td>
                             <td>Projektdauer</td>
+                            <td>Kunde</td>
+                            <td>Aufgaben</td>
                     <tbody>
                     @for(project <- projectList){
                         <tr>
                             <td>@project.getId()</td>
                             <td>@project.getName()</td>
                             <td>@project.getBeschreibung()</td>
-                            <td>@project.getProjektdauer()</td>
+                            <td>@project.projektdauer()</td>
+                            <td>@project.getCustomer.getName()</td>
+                            <td>
+                                <ul>
+                                @for(task <- project.getTasks()){
+                                    <li>@task.getName()</li>
+                                }
+                                </ul>
+                            </td>
 
                             <td>
                                 <a href="@routes.ProjectController.show(project.getId())" class="btn btn-danger"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i></a>

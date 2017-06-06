@@ -17,26 +17,20 @@ public class Project extends Model {
 
     private String name;
     private String beschreibung;
-    private String projektdauer;
     private String imagePath;
 
-    @OneToMany(mappedBy = "project")
-    private List<ProjectHolder> projectHolders;
 
     @OneToMany(mappedBy = "project")
-    private List<ProjectTask> projectTasks;
+    private List<Task> tasks;
+
+    @ManyToOne
+    private Customer customer;
+
+    @Transient
+    private String tmpcustomer;
 
     public static Finder<Long, Project> find = new Finder<Long, Project>(Project.class);
 
-    public Project(Long id, String name, String beschreibung, String projektdauer, String imagePath, List<ProjectHolder> projectHolders, List<ProjectTask> projectTasks) {
-        this.id = id;
-        this.name = name;
-        this.beschreibung = beschreibung;
-        this.projektdauer = projektdauer;
-        this.imagePath = imagePath;
-        this.projectHolders = projectHolders;
-        this.projectTasks = projectTasks;
-    }
 
     public Project() {
 
@@ -47,8 +41,8 @@ public class Project extends Model {
         return "Project{" +
                 "name='" + name + '\'' +
                 ", beschreibung='" + beschreibung + '\'' +
-                ", projektdauer='" + projektdauer + '\'' +
-                ", projectHolders=" + projectHolders +
+                ", projektdauer='" + this.projektdauer() + '\'' +
+                ", projectHolders=" + this.customer.getName() +
                 '}';
     }
 
@@ -68,19 +62,6 @@ public class Project extends Model {
         this.beschreibung = beschreibung;
     }
 
-    public String getProjektdauer() {
-
-
-        return projektdauer;
-    }
-
-    public void setProjektdauer(String projektdauer) {
-
-        //Task task = (Task) Task.find.all();
-
-        this.projektdauer = projektdauer;
-    }
-
     public String getImagePath() {
         return imagePath;
     }
@@ -89,21 +70,6 @@ public class Project extends Model {
         this.imagePath = imagePath;
     }
 
-    public List<ProjectHolder> getProjectHolders() {
-        return projectHolders;
-    }
-
-    public void setProjectHolders(List<ProjectHolder> projectHolders) {
-        this.projectHolders = projectHolders;
-    }
-
-    public List<ProjectTask> getProjectTasks() {
-        return projectTasks;
-    }
-
-    public void setProjectTasks(List<ProjectTask> projectTasks) {
-        this.projectTasks = projectTasks;
-    }
 
     public static Finder<Long, Project> getFind() {
         return find;
@@ -119,5 +85,37 @@ public class Project extends Model {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public String getTmpcustomer() {
+        return tmpcustomer;
+    }
+
+    public void setTmpcustomer(String tmpcustomer) {
+        this.tmpcustomer = tmpcustomer;
+    }
+
+    public Long projektdauer(){
+        Long dauer = 0L;
+        for(Task task: tasks){
+            dauer += task.getDauer();
+        }
+        return dauer;
     }
 }

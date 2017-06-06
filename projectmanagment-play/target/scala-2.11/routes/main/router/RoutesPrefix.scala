@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Stefan Theissl/servSE/projekt/Projekt-SSE/projectmanagment-play/conf/routes
-// @DATE:Tue Jun 06 00:44:34 CEST 2017
+// @DATE:Tue Jun 06 03:03:50 CEST 2017
 
 
 package router {
